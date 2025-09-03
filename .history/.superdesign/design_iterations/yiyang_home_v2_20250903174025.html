@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yiyang Sun - Computer Science Student [Neo-Brutalist Portfolio]</title>
+    <meta name="description" content="Yiyang Sun - VU Amsterdam Computer Science student with 5+ years business experience. Neo-brutalist portfolio design.">
+    
+    <!-- Neo-Brutalist Theme -->
+    <link rel="stylesheet" href="brutalist_theme_v2.css">
+    
+    <style>
+        /* Page-specific brutal styles */
+        body {
+            padding-top: 120px;
+            background: #FFFFFF;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px;
+        }
+        
+        /* Hero Avatar - Brutalist */
+        .brutalist-avatar-container {
+            display: inline-block;
+            position: relative;
+            margin: 18px auto;
+        }
+        
+        .brutalist-avatar {
+            width: 150px;
+            height: 150px;
+            border: 6px solid #000000;
+            box-shadow: 6px 6px 0 #000000;
+            display: block;
+            background: #F15156;
+        }
+        
+        .brutalist-avatar::before {
+            content: 'YS';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        /* Stats specific styling */
+        .stats-section {
+            margin: 32px 0;
+        }
+        
+        /* Skills brutal grid */
+        .skills-brutal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin: 24px 0;
+        }
+        
+        .skill-category {
+            background: #FFFFFF;
+            border: 4px solid #000000;
+            padding: 16px;
+            box-shadow: 5px 5px 0 #000000;
+        }
+        
+        .skill-category h3 {
+            color: #F15156;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .skill-item {
+            background: #FFC07F;
+            border: 2px solid #000000;
+            padding: 6px 10px;
+            margin: 6px 0;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-align: center;
+            box-shadow: 3px 3px 0 #000000;
+        }
+        
+        .skill-item:hover {
+            background: #F15156;
+            color: #FFFFFF;
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0 #000000;
+        }
+        
+        /* Preview cards brutal */
+        .preview-section {
+            margin: 48px 0;
+        }
+        
+        .preview-card {
+            background: #FFFFFF;
+            border: 4px solid #000000;
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 6px 6px 0 #000000;
+            position: relative;
+        }
+        
+        .preview-card::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 40px;
+            height: 40px;
+            background: #F15156;
+            border: 3px solid #000000;
+        }
+        
+        .preview-card:nth-child(even) {
+            background: #FFCF99;
+        }
+        
+        .preview-card:nth-child(even)::before {
+            background: #721121;
+        }
+        
+        .preview-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 12px;
+        }
+        
+        .preview-description {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 18px;
+        }
+        
+        .preview-tags {
+            margin: 12px 0;
+        }
+        
+        .preview-tag {
+            display: inline-block;
+            background: #721121;
+            color: #FFFFFF;
+            padding: 4px 8px;
+            margin: 4px;
+            border: 2px solid #000000;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        
+        /* Mobile brutal responsive */
+        @media (max-width: 768px) {
+            .skills-brutal-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            
+            .brutalist-avatar {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .brutalist-avatar::before {
+                font-size: 2.2rem;
+            }
+            
+            .preview-card {
+                padding: 16px;
+                margin: 16px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Brutalist Navigation -->
+    <nav class="brutalist-nav">
+        <div class="main-container">
+            <strong style="font-size: 1.3rem; margin-right: 24px;">YIYANG SUN</strong>
+            <a href="yiyang_home_v2.html" class="brutalist-nav-item active">HOME</a>
+            <a href="yiyang_projects_v2.html" class="brutalist-nav-item">PROJECTS</a>
+            <a href="yiyang_work_v2.html" class="brutalist-nav-item">WORK</a>
+            <a href="yiyang_personal_v2.html" class="brutalist-nav-item">PERSONAL</a>
+            <a href="yiyang_hireme_v2.html" class="brutalist-nav-item">HIRE ME</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Hero Section - Brutalist -->
+        <section class="brutalist-hero">
+            <div class="brutalist-text-center">
+                <div class="brutalist-avatar-container">
+                    <div class="brutalist-avatar"></div>
+                </div>
+                
+                <h1 class="title-huge" style="margin: 24px 0;">Hello I'm Yiyang</h1>
+                <h2 class="title-large" style="margin: 16px 0;">Computer Science Student</h2>
+                
+                <p style="font-size: 1.2rem; max-width: 600px; margin: 24px auto; font-weight: 700;">
+                    VU Amsterdam Computer Science student (2025 graduate) with 5+ years international business experience. 
+                    Passionate about combining business insight with technical innovation.
+                </p>
+                
+                <div style="margin: 32px 0;">
+                    <a href="mailto:miloyysun@outlook.com" class="brutalist-button" style="margin: 8px;">Email Me</a>
+                    <a href="https://linkedin.com/in/yiyangsunmilo" class="brutalist-button" style="margin: 8px;">LinkedIn</a>
+                    <a href="https://github.com/miloyiyangsun" class="brutalist-button" style="margin: 8px;">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section - Brutalist -->
+        <section class="stats-section">
+            <h2 class="title-large brutalist-text-center" style="margin: 32px 0;">My Numbers</h2>
+            
+            <div class="brutalist-stats">
+                <div class="brutalist-stat">
+                    <span class="brutalist-stat-number">5+</span>
+                    <span class="brutalist-stat-label">Years Business Experience</span>
+                </div>
+                <div class="brutalist-stat">
+                    <span class="brutalist-stat-number">4</span>
+                    <span class="brutalist-stat-label">Real Projects</span>
+                </div>
+                <div class="brutalist-stat">
+                    <span class="brutalist-stat-number">2</span>
+                    <span class="brutalist-stat-label">Degrees</span>
+                </div>
+                <div class="brutalist-stat">
+                    <span class="brutalist-stat-number">5</span>
+                    <span class="brutalist-stat-label">Languages Spoken</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section - Brutalist -->
+        <section>
+            <h2 class="title-large brutalist-text-center" style="margin: 48px 0 32px 0;">Technical Skills</h2>
+            
+            <div class="skills-brutal-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">TypeScript</div>
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">HTML5</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-item">Java</div>
+                    <div class="skill-item">Spring Boot</div>
+                    <div class="skill-item">C/C++</div>
+                    <div class="skill-item">Python</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud & Tools</h3>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Azure Cloud</div>
+                    <div class="skill-item">Git CI/CD</div>
+                    <div class="skill-item">PostgreSQL</div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-item">English</div>
+                    <div class="skill-item">Mandarin</div>
+                    <div class="skill-item">Cantonese</div>
+                    <div class="skill-item">Japanese</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Cards Section - Brutalist -->
+        <section class="preview-section">
+            <h2 class="title-large brutalist-text-center" style="margin: 64px 0 48px 0;">Explore More</h2>
+            
+            <div class="preview-card">
+                <div class="preview-title">My Projects</div>
+                <div class="preview-description">
+                    Discover my technical projects including full-stack applications, mobile apps, 
+                    and browser extensions. Each project showcases different aspects of my development skills.
+                </div>
+                <div class="preview-tags">
+                    <span class="preview-tag">Dutch Salary Insights</span>
+                    <span class="preview-tag">ChatGPT Deleter</span>
+                    <span class="preview-tag">JustRaw Camera</span>
+                    <span class="preview-tag">AI Community</span>
+                </div>
+                <a href="yiyang_projects_v2.html" class="brutalist-button">View Projects</a>
+            </div>
+            
+            <div class="preview-card">
+                <div class="preview-title">Work Experience</div>
+                <div class="preview-description">
+                    5+ years international business experience: Facebook Ads specialist, team leader, 
+                    overseas business specialist across Singapore, China, and Netherlands.
+                </div>
+                <div class="preview-tags">
+                    <span class="preview-tag">NetEase Youdao</span>
+                    <span class="preview-tag">TP-LINK Singapore</span>
+                    <span class="preview-tag">Team Leadership</span>
+                </div>
+                <a href="yiyang_work_v2.html" class="brutalist-button">View Experience</a>
+            </div>
+            
+            <div class="preview-card">
+                <div class="preview-title">Personal Journey</div>
+                <div class="preview-description">
+                    From business professional to computer science student: Sun Yat-sen University (Business English) 
+                    to VU Amsterdam (Computer Science), volunteer work, and AI community building.
+                </div>
+                <div class="preview-tags">
+                    <span class="preview-tag">VU Amsterdam CS</span>
+                    <span class="preview-tag">Sun Yat-sen University</span>
+                    <span class="preview-tag">Career Transition</span>
+                </div>
+                <a href="yiyang_personal_v2.html" class="brutalist-button">My Story</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer - Brutalist -->
+    <footer style="background: #000000; color: #FFFFFF; padding: 32px; text-align: center; border-top: 4px solid #F15156;">
+        <div class="main-container">
+            <p style="font-weight: 700; margin-bottom: 8px;">
+                &copy; 2025 YIYANG SUN. BUILT WITH BRUTALIST DESIGN PRINCIPLES.
+            </p>
+            <p style="font-size: 0.9rem;">
+                Designed and developed with neo-brutalism • Amsterdam, Netherlands
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Minimal JavaScript - True to brutalist philosophy
+        console.log('🏗️ YIYANG SUN PORTFOLIO - NEO-BRUTALIST VERSION');
+        console.log('Built with minimal JS, maximum impact!');
+        
+        // Simple click feedback for brutalist buttons
+        document.querySelectorAll('.brutalist-button, .skill-item').forEach(element => {
+            element.addEventListener('mousedown', function() {
+                this.style.transform = 'translate(3px, 3px)';
+                this.style.boxShadow = 'none';
+            });
+            
+            element.addEventListener('mouseup', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
