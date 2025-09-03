@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hire Me - Yiyang Sun [Neo-Brutalist Portfolio]</title>
+    <meta
+      name="description"
+      content="Hire Yiyang Sun - Computer Science Student (2025 Graduate) with 5+ years business experience seeking Junior Full-Stack, Frontend, or Backend opportunities in Amsterdam. Neo-brutalist design."
+    />
+
+    <!-- Neo-Brutalist Theme -->
+    <link rel="stylesheet" href="brutalist_theme_v2.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <style>
+      /* Hire Me specific brutal styles */
+      body {
+        padding-top: 120px;
+        background: #ffffff;
+      }
+
+      .main-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px;
+      }
+
+      /* Navigation Layout - Right Align */
+      .brutalist-nav .main-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 4px;
+      }
+
+      /* Navigation Brand - Brutalist */
+      .nav-brand {
+        background: #ffcf99;
+        border: 3px solid #000000;
+        padding: 8px 12px;
+        box-shadow: 4px 4px 0 #000000;
+        font-weight: 900;
+      }
+
+      /* Hero CTA - Brutal */
+      .hire-hero {
+        background: #f15156;
+        color: #ffffff;
+        border: 8px solid #000000;
+        padding: 48px 24px;
+        text-align: center;
+        box-shadow: 12px 12px 0 #000000;
+        position: relative;
+        margin: 24px 0;
+      }
+
+      .hire-hero::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: -30px;
+        font-size: 4rem;
+        background: #ffffff;
+        border: 6px solid #000000;
+        padding: 16px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hire-hero .hero-icon {
+        position: absolute;
+        top: -14px;
+        left: -14px;
+        color: #000000;
+        width: 68px;
+        height: 68px;
+      }
+
+      .hire-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 0 0 18px 0;
+        line-height: 0.9;
+      }
+
+      .hire-subtitle {
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        opacity: 0.95;
+      }
+
+      /* Opportunity Cards - Brutal */
+      .opportunity-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+        margin: 36px 0;
+      }
+
+      .opportunity-card {
+        background: #ffffff;
+        border: 6px solid #000000;
+        padding: 17px 17px 17px 17px;
+        padding-top: 60px;
+        box-shadow: 8px 8px 0 #000000;
+        position: relative;
+        text-align: center;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+      }
+
+      .opportunity-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 12px 12px 0 #000000;
+        background: #ffc07f;
+      }
+
+      .opportunity-card:nth-child(1) {
+        background: #ffc07f;
+      }
+
+      .opportunity-card:nth-child(2) {
+        background: #ffcf99;
+      }
+
+      .opportunity-card:nth-child(3) {
+        background: #ffc07f;
+      }
+
+      .opportunity-card::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 50px;
+        height: 50px;
+        background: #f15156;
+        border: 4px solid #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .opportunity-card .card-icon {
+        position: absolute;
+        top: 0px;
+        right: 2px;
+        width: 35px;
+        height: 35px;
+        color: #ffffff;
+        z-index: 10;
+      }
+
+      .opportunity-icon {
+        font-size: 1.8rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .opportunity-title {
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #ffffff;
+        background: #721121;
+        padding: 8px 12px;
+        border: 2px solid #000000;
+        margin-bottom: 12px;
+        box-shadow: 3px 3px 0 #000000;
+      }
+
+      .opportunity-description {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      /* Skills Match - Brutal */
+      .skills-match {
+        background: #a5402d;
+        color: #ffffff;
+        padding: 8px 12px;
+        border: 3px solid #000000;
+        margin: 8px 0;
+        box-shadow: 4px 4px 0 #000000;
+        font-size: 0.8rem;
+        transition: all 0.12s ease-out;
+        cursor: pointer;
+      }
+
+      .skills-match:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 #000000;
+        background: #f15156;
+      }
+
+      /* Contact Cards - Brutal */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin: 48px 0;
+      }
+
+      .contact-card {
+        background: #ffffff;
+        border: 6px solid #000000;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 6px 6px 0 #000000;
+        position: relative;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+      }
+
+      .contact-card:hover {
+        background: #ffcf99;
+        transform: translate(-3px, -3px);
+        box-shadow: 9px 9px 0 #000000;
+      }
+
+      .contact-card:nth-child(even) {
+        background: #ffc07f;
+      }
+
+      .contact-card:nth-child(even):hover {
+        background: #f15156;
+        color: #ffffff;
+      }
+
+      .contact-icon {
+        width: 64px;
+        height: 64px;
+        background: #f15156;
+        border: 4px solid #000000;
+        border-radius: 0;
+        margin: 0 auto 18px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        color: #ffffff;
+        box-shadow: 4px 4px 0 #000000;
+      }
+
+      .contact-title {
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #000000;
+      }
+
+      .contact-info {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+
+      .contact-description {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #666666;
+      }
+
+      /* Value Proposition - Brutal */
+      .value-proposition {
+        background: #721121;
+        color: #ffffff;
+        padding: 48px;
+        border: 8px solid #000000;
+        box-shadow: 12px 12px 0 #000000;
+        margin: 64px 0;
+      }
+
+      .value-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+      }
+
+      .value-item {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+      }
+
+      .value-item-title {
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+
+      .value-item-description {
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      /* Resume Download - Brutal */
+      .resume-section {
+        background: #ffcf99;
+        border: 6px solid #000000;
+        padding: 32px;
+        text-align: center;
+        box-shadow: 8px 8px 0 #000000;
+        margin: 32px 0;
+      }
+
+      .resume-title {
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        color: #000000;
+      }
+
+      .resume-info {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+
+      .download-button {
+        display: inline-block;
+        background: #f15156;
+        color: #ffffff;
+        padding: 16px 32px;
+        border: 4px solid #000000;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        box-shadow: 6px 6px 0 #000000;
+      }
+
+      .download-button:hover {
+        background: #721121;
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 #000000;
+      }
+
+      /* Availability Status - Brutal */
+      .availability {
+        background: #721121;
+        color: #ffffff;
+        padding: 24px;
+        border: 4px solid #000000;
+        text-align: center;
+        margin: 32px 0;
+        box-shadow: 6px 6px 0 #000000;
+        position: relative;
+      }
+
+      .availability::before {
+        content: "🟢";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+        background: #ffffff;
+        border: 3px solid #000000;
+        padding: 8px;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .availability-text {
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .hire-title {
+          font-size: 2.5rem;
+        }
+
+        .hire-hero {
+          padding: 40px 20px;
+        }
+
+        .opportunity-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .opportunity-card {
+          padding: 14px;
+        }
+
+        .value-proposition {
+          padding: 32px 20px;
+        }
+
+        .value-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Brutalist Navigation -->
+    <nav class="brutalist-nav">
+      <div class="main-container">
+        <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
+        <div class="nav-links">
+          <a href="index.html" class="brutalist-nav-item">HOME</a>
+          <a href="projects.html" class="brutalist-nav-item"
+            >PROJECTS</a
+          >
+          <a href="work.html" class="brutalist-nav-item">WORK</a>
+          <a href="hireme.html" class="brutalist-nav-item active"
+            >HIRE ME</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container">
+      <!-- Hero CTA -->
+      <!-- <section class="hire-hero">
+            <i data-lucide="briefcase" class="hero-icon"></i>
+            <div class="hire-title">Hire Me Now!</div>
+            <div class="hire-subtitle">CS Student (2025 Graduate) with 5+ Years Business Background</div>
+            <p style="font-size: 1.2rem; font-weight: 600; max-width: 600px; margin: 0 auto 32px auto;">
+                Computer Science student graduating July 2025 seeking Junior Full-Stack, Frontend, or Backend opportunities. 
+                5+ years international business experience + technical skills.
+            </p>
+            <a href="mailto:miloyysun@outlook.com?subject=Job Opportunity&body=Hi Yiyang, I'm interested in discussing a software development opportunity with you." 
+               class="brutalist-button" style="background: #FFFFFF; color: #000000; font-size: 1.2rem; padding: 16px 32px;">
+Email Me Today
+            </a>
+        </section> -->
+
+      <!-- Availability Status -->
+      <!-- <section class="availability">
+            <div class="availability-text">Available from July 2025 • CS Graduate • Amsterdam Based • EU Work Authorization</div>
+        </section> -->
+      <section class="availability">
+        <div class="availability-text">Ideal Opportunities</div>
+      </section>
+      <!-- Opportunity Types -->
+      <section>
+        <!-- <h2 class="title-large brutalist-text-center" style="margin: 64px 0 32px 0;">Ideal Opportunities</h2> -->
+
+        <div class="opportunity-grid">
+          <div class="opportunity-card">
+            <i data-lucide="zap" class="card-icon"></i>
+            <div class="opportunity-title">Junior Full-Stack</div>
+            <div class="opportunity-description">
+              Perfect match for full-stack roles where I can leverage both
+              frontend and backend skills along with my business understanding
+              to create complete solutions.
+            </div>
+            <div class="skills-match">
+              C/C++ • Python • React • TypeScript • Java • Spring Boot
+            </div>
+          </div>
+
+          <div class="opportunity-card">
+            <i data-lucide="palette" class="card-icon"></i>
+            <div class="opportunity-title">Frontend Developer</div>
+            <div class="opportunity-description">
+              Ideal for frontend-focused roles where user experience and
+              interface design are crucial. My marketing background brings
+              valuable user-centric perspective.
+            </div>
+            <div class="skills-match">
+              React • JavaScript • TypeScript • HTML • TailwindCSS
+            </div>
+          </div>
+
+          <div class="opportunity-card">
+            <i data-lucide="settings" class="card-icon"></i>
+            <div class="opportunity-title">Backend Developer</div>
+            <div class="opportunity-description">
+              Excellent fit for backend positions where data processing, API
+              development, and system architecture are key. My analytics
+              background is a major advantage.
+            </div>
+            <div class="skills-match">
+              Java • Spring Boot • Python • PostgreSQL • Docker • CI/CD
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Value Proposition -->
+      <!-- <section class="value-proposition">
+            <div class="value-title">Why Hire Me?</div>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-item-title">Unique Business Background</div>
+                    <div class="value-item-description">
+                        5+ years of international business experience brings valuable perspective to software development projects
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item-title">Proven Problem Solver</div>
+                    <div class="value-item-description">
+                        Demonstrated ability to analyze complex problems and implement effective technical solutions
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item-title">International Experience</div>
+                    <div class="value-item-description">
+                        Worked across Singapore, China, and Netherlands - excellent for global teams and cross-cultural projects
+                    </div>
+                </div>
+                <div class="value-item">
+                    <div class="value-item-title">Career Transition Success</div>
+                    <div class="value-item-description">
+                        Successfully transitioned from 5+ years business career to Computer Science, graduating July 2025
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+      <!-- Resume Download -->
+      <section class="resume-section">
+        <div class="resume-title">Download My Resume</div>
+        <div class="resume-info">Updated: September 2025 • PDF Format</div>
+        <a
+          href="assets/resume/Yiyang-Sun-Resume.pdf"
+          class="download-button"
+          download="Yiyang-Sun-Resume.pdf"
+        >
+          <i
+            data-lucide="file-text"
+            style="
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: 8px;
+            "
+          ></i>
+          Download Resume
+        </a>
+      </section>
+
+      <!-- Contact Information -->
+      <!-- <section>
+            <h2 class="title-large brutalist-text-center" style="margin: 64px 0 32px 0;">Let's Connect</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-title">Email Me</div>
+                    <div class="contact-info">miloyysun@outlook.com</div>
+                    <div class="contact-description">Primary Communication Method</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-title">LinkedIn</div>
+                    <div class="contact-info">yiyangsunmilo</div>
+                    <div class="contact-description">Professional Networking</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-title">Location</div>
+                    <div class="contact-info">Amsterdam, Netherlands</div>
+                    <div class="contact-description">Available for Local Opportunities</div>
+                </div>
+            </div>
+        </section> -->
+
+      <!-- Final CTA -->
+      <section class="brutalist-hero brutalist-bg-red" style="margin: 64px 0">
+        <div class="brutalist-text-center">
+          <h2 class="title-large" style="color: #ffffff; margin-bottom: 16px">
+            Ready to Start the Conversation?
+          </h2>
+          <!-- <p style="font-size: 1.3rem; font-weight: 700; color: #FFFFFF; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Whether you have a specific role in mind or just want to explore possibilities, 
+                    I'm excited to discuss how my unique background can contribute to your team's success.
+                </p> -->
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 16px;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="mailto:miloyysun@outlook.com?subject=Software Development Opportunity&body=Hi Yiyang, I'm interested in discussing potential opportunities with you."
+              class="brutalist-button"
+              style="background: #ffffff; color: #000000; font-size: 1.1rem"
+            >
+              <i
+                data-lucide="mail"
+                style="
+                  width: 18px;
+                  height: 18px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              ></i>
+              Send Email
+            </a>
+            <a
+              href="https://linkedin.com/in/yiyangsunmilo"
+              class="brutalist-button"
+              style="background: #ffffff; color: #000000; font-size: 1.1rem"
+              target="_blank"
+            >
+              <i
+                data-lucide="linkedin"
+                style="
+                  width: 18px;
+                  height: 18px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  margin-right: 6px;
+                "
+              ></i>
+              LinkedIn Message
+            </a>
+            <!-- <a href="tel:+31626707606" 
+                       class="brutalist-button" style="background: #FFFFFF; color: #000000; font-size: 1.1rem;">
+                        📞 Call: +31 626707606
+                    </a> -->
+          </div>
+
+          <div
+            style="
+              margin-top: 32px;
+              padding: 24px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 3px solid rgba(255, 255, 255, 0.3);
+            "
+          >
+            <h3
+              style="
+                font-size: 1.2rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              Quick Hiring Facts:
+            </h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 16px;
+                text-align: left;
+              "
+            >
+              <div>✓ <strong>Availability:</strong> July 2025</div>
+              <div>✓ <strong>Location:</strong> Amsterdam</div>
+              <div>✓ <strong>Visa Status:</strong> EU Authorized</div>
+              <div>✓ <strong>Experience:</strong> 5+ Years Business</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background: #000000;
+        color: #ffffff;
+        padding: 32px;
+        text-align: center;
+        border-top: 4px solid #f15156;
+      "
+    >
+      <div class="main-container">
+        <p
+          style="
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+          "
+        >
+          &copy; 2025 YIYANG SUN. BUILT WITH BRUTALIST DESIGN PRINCIPLES.
+        </p>
+        <p style="font-size: 0.9rem; text-transform: uppercase">
+          Designed and developed with neo-brutalism • Amsterdam, Netherlands
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Minimal JavaScript for hire me page
+      console.log("💼 HIRE ME PAGE - NEO-BRUTALIST DESIGN LOADED");
+      console.log("🚀 READY TO HIRE YIYANG SUN!");
+
+      // Enhanced button press effects for CTA buttons
+      document
+        .querySelectorAll(".brutalist-button, .download-button, .contact-card")
+        .forEach((element) => {
+          element.addEventListener("mousedown", function () {
+            this.style.transform = "translate(3px, 3px)";
+            this.style.boxShadow = "none";
+          });
+
+          element.addEventListener("mouseup", function () {
+            this.style.transform = "";
+            this.style.boxShadow = "";
+          });
+
+          element.addEventListener("mouseleave", function () {
+            this.style.transform = "";
+            this.style.boxShadow = "";
+          });
+        });
+
+      // Log hiring intent tracking
+      document.querySelectorAll('a[href^="mailto:"]').forEach((emailLink) => {
+        emailLink.addEventListener("click", function () {
+          console.log("📧 EMAIL CLICK - POTENTIAL HIRE INTEREST!");
+        });
+      });
+    </script>
+  </body>
+</html>
