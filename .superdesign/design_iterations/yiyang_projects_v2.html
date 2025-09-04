@@ -109,6 +109,30 @@
         box-shadow: 8px 8px 0 #000000;
         position: relative;
         overflow: visible;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+      }
+
+      .project-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 12px 12px 0 #000000;
+        background: #ffc07f;
+      }
+
+      /* Header保持深色背景确保白色文字可见 */
+      .project-card:hover .project-header {
+        background: #721121;
+        color: #ffffff;
+      }
+
+      .project-card:nth-child(even):hover {
+        background: #f15156;
+        color: #ffffff;
+      }
+
+      .project-card:nth-child(even):hover .project-header {
+        background: #a5402d;
+        color: #ffffff;
       }
 
       .project-card::before {
@@ -199,6 +223,36 @@
         padding: 12px;
         text-align: center;
         box-shadow: 3px 3px 0 #000000;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+      }
+
+      .stat-box:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 6px 6px 0 #000000;
+        background: #ffc07f;
+        color: #000000;
+      }
+
+      /* 确保偶数卡片内的stat-box不受父容器白色文字影响 */
+      .project-card:nth-child(even) .stat-box {
+        color: #000000;
+      }
+
+      .project-card:nth-child(even) .stat-box:hover {
+        color: #000000;
+      }
+
+      /* Hero Section Hover Effects */
+      .brutalist-hero:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 8px 8px 0 #000000;
+        transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+      }
+
+      .title-huge:hover {
+        transform: translate(-1px, -1px);
+        transition: transform 0.12s ease-out;
       }
 
       .stat-number {
@@ -264,6 +318,7 @@
         position: relative;
         font-weight: 600;
         box-shadow: 3px 3px 0 #000000;
+        color: #000000;
       }
 
       .feature-item::before {
@@ -472,7 +527,9 @@
       <!-- Project 2: ChatGPT Deleter -->
       <section class="project-card">
         <div class="project-header">
-          <div class="project-title" id="chatgpt-deleter">ChatGPT Deleter</div>
+          <div class="project-title" id="chatgpt-deleter">
+            ChatGPT History Batch Deleter
+          </div>
           <div class="project-subtitle">Browser Extension</div>
         </div>
         <div class="project-content">
@@ -659,7 +716,7 @@
               href="https://www.xiaohongshu.com/user/profile/6876efd1000000000d03c562"
               class="action-button"
               target="_blank"
-              >访问小红书社区</a
+              >Vist the Community</a
             >
             <a
               href="https://github.com/miloyiyangsun"

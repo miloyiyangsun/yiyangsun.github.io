@@ -36,6 +36,11 @@
         padding: 18px;
       }
 
+      /* 为主内容增加左右padding，保持导航栏不变 */
+      main.main-container {
+        padding: 20px 60px; /* 上下18px，左右60px */
+      }
+
       /* Navigation Layout - Right Align */
       .brutalist-nav .main-container {
         display: flex;
@@ -386,6 +391,176 @@
         transform: translate(-1px, -1px);
         transition: transform 0.12s ease-out;
       }
+
+      /* Projects Navigation Cards */
+      .projects-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin: 32px 0;
+      }
+
+      .projects-nav-item {
+        background: #ffc07f;
+        border: 4px solid #000000;
+        padding: 0;
+        text-align: center;
+        text-decoration: none;
+        color: #000000;
+        font-weight: 900;
+        box-shadow: 4px 4px 0 #000000;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.15s ease-out;
+      }
+
+      .projects-nav-item img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        flex: 0 0 auto;
+      }
+
+      .projects-nav-item .nav-title {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 4px solid #000000;
+        min-height: 44px;
+        line-height: 1.2;
+      }
+
+      .projects-nav-item:hover {
+        background: #f15156;
+        color: #ffffff;
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 #000000;
+      }
+
+      .projects-nav-item:hover .nav-title {
+        color: #ffffff;
+      }
+
+      /* Work Navigation Cards */
+      .work-nav-section {
+        margin: 48px 0;
+      }
+
+      .work-nav-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .work-nav-card {
+        background: #ffffff;
+        border: 4px solid #000000;
+        padding: 20px;
+        box-shadow: 6px 6px 0 #000000;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      .work-nav-card:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 9px 9px 0 #000000;
+        background: #ffc07f;
+      }
+
+      .work-nav-position {
+        font-size: 1.2rem;
+        font-weight: 900;
+        margin-bottom: 12px;
+        color: #ffffff;
+        background: #721121;
+        border: 3px solid #000000;
+        padding: 10px 14px;
+        box-shadow: 4px 4px 0 #000000;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .work-nav-company {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #000000;
+      }
+
+      .work-nav-period {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #721121;
+        margin-bottom: 12px;
+      }
+
+      .work-nav-highlights {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+
+      .work-nav-highlight {
+        background: #721121;
+        color: #ffffff;
+        padding: 6px 10px;
+        font-weight: 700;
+        font-size: 0.8rem;
+        border: 2px solid #000000;
+        display: inline-block;
+        box-shadow: 3px 3px 0 #000000;
+        flex: 1;
+        min-width: 80px;
+        text-align: center;
+        transition: all 0.15s ease-out;
+        cursor: pointer;
+      }
+
+      .work-nav-highlight:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 5px 5px 0 #000000;
+        background: #f15156;
+      }
+
+      /* Section Titles */
+      .section-title {
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-align: center;
+        background: #ffcf99;
+        border: 4px solid #000000;
+        padding: 12px 24px;
+        box-shadow: 4px 4px 0 #000000;
+        display: inline-block;
+        width: fit-content;
+        margin: 0 auto 32px auto;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .projects-nav,
+        .work-nav-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-nav-item .nav-title {
+          font-size: 0.85rem;
+          padding: 10px 6px;
+          min-height: 40px;
+        }
+      }
     </style>
   </head>
 
@@ -395,14 +570,10 @@
       <div class="main-container">
         <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
         <div class="nav-links">
-          <a href="yiyang_home_v2.html" class="brutalist-nav-item active"
-            >HOME</a
-          >
-          <a href="yiyang_projects_v2.html" class="brutalist-nav-item"
-            >PROJECTS</a
-          >
-          <a href="yiyang_work_v2.html" class="brutalist-nav-item">WORK</a>
-          <a href="yiyang_hireme_v2.html" class="brutalist-nav-item">HIRE ME</a>
+          <a href="index.html" class="brutalist-nav-item active">HOME</a>
+          <a href="projects.html" class="brutalist-nav-item">PROJECTS</a>
+          <a href="work.html" class="brutalist-nav-item">WORK</a>
+          <a href="hireme.html" class="brutalist-nav-item">HIRE ME</a>
         </div>
       </div>
     </nav>
@@ -413,7 +584,20 @@
       <section class="brutalist-hero">
         <div class="hero-layout">
           <div class="hero-content">
-            <h1 class="title-huge" style="margin: 24px 0">Hi, I'm Yiyang</h1>
+            <h1
+              class="title-huge"
+              style="
+                margin: 24px 0;
+                background: #721121;
+                color: #ffffff;
+                border: 4px solid #000000;
+                padding: 16px 24px;
+                box-shadow: 6px 6px 0 #000000;
+                display: inline-block;
+              "
+            >
+              Hi, I'm Yiyang
+            </h1>
             <h2
               class="title-large"
               style="margin: 16px 0; text-transform: uppercase"
@@ -460,7 +644,7 @@
           <div class="hero-avatar">
             <div class="brutalist-avatar-container">
               <img
-                src="../../assets/images/yiyang-photo.jpg"
+                src="assets/images/yiyang-photo.jpg"
                 alt="Yiyang Sun"
                 class="brutalist-avatar"
               />
@@ -471,7 +655,7 @@
 
       <!-- Stats Section - Brutalist -->
       <section class="stats-section">
-        <div style="text-align: center; margin: 32px 0;">
+        <div style="text-align: center; margin: 32px 0">
           <h2
             class="title-large"
             style="
@@ -510,7 +694,7 @@
 
       <!-- Skills Section - Brutalist -->
       <section>
-        <div style="text-align: center; margin: 48px 0 32px 0;">
+        <div style="text-align: center; margin: 48px 0 32px 0">
           <h2
             class="title-large"
             style="
@@ -597,7 +781,7 @@
 
       <!-- Education Section -->
       <section>
-        <div style="text-align: center; margin: 64px 0 32px 0;">
+        <div style="text-align: center; margin: 64px 0 32px 0">
           <h2
             class="title-large"
             style="
@@ -618,7 +802,7 @@
           <div class="education-card">
             <div class="education-logo">
               <img
-                src="../../assets/logos/vu-amsterdam-logo.png"
+                src="assets/logos/vu-amsterdam-logo.png"
                 alt="VU Amsterdam Logo"
               />
             </div>
@@ -637,7 +821,7 @@
           <div class="education-card">
             <div class="education-logo">
               <img
-                src="../../assets/logos/sysu-logo.png"
+                src="assets/logos/sysu-logo.png"
                 alt="Sun Yat-sen University Logo"
               />
             </div>
@@ -656,8 +840,8 @@
       </section>
 
       <!-- Preview Cards Section - Brutalist -->
-      <section class="preview-section">
-        <div style="text-align: center; margin: 64px 0 48px 0;">
+      <!-- <section class="preview-section">
+        <div style="text-align: center; margin: 64px 0 48px 0">
           <h2
             class="title-large"
             style="
@@ -672,9 +856,96 @@
           >
             Explore More
           </h2>
-        </div>
+        </div> -->
 
-        <div class="preview-card">
+        <!-- Projects Navigation Section -->
+        <section>
+          <div class="section-title">My Projects</div>
+          <div class="projects-nav">
+            <a href="projects.html#dutch-salary" class="projects-nav-item">
+              <div class="nav-title">Dutch Salary Insights</div>
+              <img
+                src="assets/images/projects/dutch-salary-preview.jpg"
+                alt="Dutch Salary Insights Preview"
+              />
+            </a>
+            <a href="projects.html#chatgpt-deleter" class="projects-nav-item">
+              <div class="nav-title">ChatGPT History Batch Deleter</div>
+              <img
+                src="assets/images/projects/chatgpt-deleter-preview.jpg"
+                alt="ChatGPT Deleter Preview"
+              />
+            </a>
+            <a href="projects.html#justraw-camera" class="projects-nav-item">
+              <div class="nav-title">JustRaw Camera</div>
+              <img
+                src="assets/images/projects/justraw-camera-preview.jpg"
+                alt="JustRaw Camera Preview"
+              />
+            </a>
+            <a href="projects.html#ai-community" class="projects-nav-item">
+              <div class="nav-title">AI Self-Media Community</div>
+              <img
+                src="assets/images/projects/ai-community-preview.jpg"
+                alt="AI Community Preview"
+              />
+            </a>
+          </div>
+        </section>
+
+        <!-- Work Navigation Section -->
+        <section class="work-nav-section">
+          <div class="section-title">Work Experience</div>
+          <div class="work-nav-grid">
+            <a href="work.html#netease-youdao" class="work-nav-card">
+              <div class="work-nav-position">Facebook Ads Specialist</div>
+              <div class="work-nav-company">
+                NetEase Youdao Information Technology
+              </div>
+              <div class="work-nav-period">April 2019 - April 2021</div>
+              <div class="work-nav-highlights">
+                <div class="work-nav-highlight">$10K Daily Budget</div>
+                <div class="work-nav-highlight">50% CPI Reduction</div>
+                <div class="work-nav-highlight">4-Person Team Management</div>
+              </div>
+            </a>
+
+            <a href="work.html#youmi-technology" class="work-nav-card">
+              <div class="work-nav-position">Overseas Ads Team Leader</div>
+              <div class="work-nav-company">Youmi Technology</div>
+              <div class="work-nav-period">July 2018 - April 2019</div>
+              <div class="work-nav-highlights">
+                <div class="work-nav-highlight">119% KPI Achievement</div>
+                <div class="work-nav-highlight">6-Person Team Management</div>
+                <div class="work-nav-highlight">2 New Hires</div>
+              </div>
+            </a>
+
+            <a href="work.html#yedao-technology" class="work-nav-card">
+              <div class="work-nav-position">Facebook Ads Specialist</div>
+              <div class="work-nav-company">Shanghai Yedao Technology</div>
+              <div class="work-nav-period">January 2018 - July 2018</div>
+              <div class="work-nav-highlights">
+                <div class="work-nav-highlight">$3K Daily Spend</div>
+                <div class="work-nav-highlight">2.4 ROI</div>
+                <div class="work-nav-highlight">3 Months to Top</div>
+              </div>
+            </a>
+
+            <a href="work.html#tplink-singapore" class="work-nav-card">
+              <div class="work-nav-position">Overseas Business Specialist</div>
+              <div class="work-nav-company">TP-LINK Singapore</div>
+              <div class="work-nav-period">July 2016 - July 2017</div>
+              <div class="work-nav-highlights">
+                <div class="work-nav-highlight">350+ Products/Month</div>
+                <div class="work-nav-highlight">2 Countries</div>
+                <div class="work-nav-highlight">1 Year Overseas</div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- <div class="preview-card">
           <div class="preview-title">My Projects</div>
           <div class="preview-description">
             Discover my technical projects including full-stack applications,
@@ -687,9 +958,7 @@
             <span class="preview-tag">JustRaw Camera</span>
             <span class="preview-tag">AI Self-Media Community</span>
           </div>
-          <a href="yiyang_projects_v2.html" class="brutalist-button"
-            >View Projects</a
-          >
+          <a href="projects.html" class="brutalist-button">View Projects</a>
         </div>
 
         <div class="preview-card">
@@ -704,10 +973,8 @@
             <span class="preview-tag">TP-LINK Singapore</span>
             <span class="preview-tag">Yedao Technology</span>
           </div>
-          <a href="yiyang_work_v2.html" class="brutalist-button"
-            >View Experience</a
-          >
-        </div>
+          <a href="work.html" class="brutalist-button">View Experience</a>
+        </div> -->
 
         <!-- <div class="preview-card">
                 <div class="preview-title">Personal Journey</div>

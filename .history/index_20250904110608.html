@@ -36,6 +36,11 @@
         padding: 18px;
       }
 
+      /* 为主内容增加左右padding，保持导航栏不变 */
+      main.main-container {
+        padding: 60px 60px; /* 上下18px，左右60px */
+      }
+
       /* Navigation Layout - Right Align */
       .brutalist-nav .main-container {
         display: flex;
@@ -395,14 +400,10 @@
       <div class="main-container">
         <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
         <div class="nav-links">
-          <a href="yiyang_home_v2.html" class="brutalist-nav-item active"
-            >HOME</a
-          >
-          <a href="yiyang_projects_v2.html" class="brutalist-nav-item"
-            >PROJECTS</a
-          >
-          <a href="yiyang_work_v2.html" class="brutalist-nav-item">WORK</a>
-          <a href="yiyang_hireme_v2.html" class="brutalist-nav-item">HIRE ME</a>
+          <a href="index.html" class="brutalist-nav-item active">HOME</a>
+          <a href="projects.html" class="brutalist-nav-item">PROJECTS</a>
+          <a href="work.html" class="brutalist-nav-item">WORK</a>
+          <a href="hireme.html" class="brutalist-nav-item">HIRE ME</a>
         </div>
       </div>
     </nav>
@@ -460,7 +461,7 @@
           <div class="hero-avatar">
             <div class="brutalist-avatar-container">
               <img
-                src="../../assets/images/yiyang-photo.jpg"
+                src="assets/images/yiyang-photo.jpg"
                 alt="Yiyang Sun"
                 class="brutalist-avatar"
               />
@@ -471,7 +472,7 @@
 
       <!-- Stats Section - Brutalist -->
       <section class="stats-section">
-        <div style="text-align: center; margin: 32px 0;">
+        <div style="text-align: center; margin: 32px 0">
           <h2
             class="title-large"
             style="
@@ -510,7 +511,7 @@
 
       <!-- Skills Section - Brutalist -->
       <section>
-        <div style="text-align: center; margin: 48px 0 32px 0;">
+        <div style="text-align: center; margin: 48px 0 32px 0">
           <h2
             class="title-large"
             style="
@@ -597,7 +598,7 @@
 
       <!-- Education Section -->
       <section>
-        <div style="text-align: center; margin: 64px 0 32px 0;">
+        <div style="text-align: center; margin: 64px 0 32px 0">
           <h2
             class="title-large"
             style="
@@ -618,7 +619,7 @@
           <div class="education-card">
             <div class="education-logo">
               <img
-                src="../../assets/logos/vu-amsterdam-logo.png"
+                src="assets/logos/vu-amsterdam-logo.png"
                 alt="VU Amsterdam Logo"
               />
             </div>
@@ -637,7 +638,7 @@
           <div class="education-card">
             <div class="education-logo">
               <img
-                src="../../assets/logos/sysu-logo.png"
+                src="assets/logos/sysu-logo.png"
                 alt="Sun Yat-sen University Logo"
               />
             </div>
@@ -657,7 +658,7 @@
 
       <!-- Preview Cards Section - Brutalist -->
       <section class="preview-section">
-        <div style="text-align: center; margin: 64px 0 48px 0;">
+        <div style="text-align: center; margin: 64px 0 48px 0">
           <h2
             class="title-large"
             style="
@@ -687,9 +688,7 @@
             <span class="preview-tag">JustRaw Camera</span>
             <span class="preview-tag">AI Self-Media Community</span>
           </div>
-          <a href="yiyang_projects_v2.html" class="brutalist-button"
-            >View Projects</a
-          >
+          <a href="projects.html" class="brutalist-button">View Projects</a>
         </div>
 
         <div class="preview-card">
@@ -704,9 +703,7 @@
             <span class="preview-tag">TP-LINK Singapore</span>
             <span class="preview-tag">Yedao Technology</span>
           </div>
-          <a href="yiyang_work_v2.html" class="brutalist-button"
-            >View Experience</a
-          >
+          <a href="work.html" class="brutalist-button">View Experience</a>
         </div>
 
         <!-- <div class="preview-card">

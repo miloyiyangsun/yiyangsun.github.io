@@ -13,14 +13,9 @@
     <link rel="stylesheet" href="brutalist_theme_v2.css" />
 
     <style>
-      /* 平滑滚动效果 */
-      html {
-        scroll-behavior: smooth;
-      }
-
       /* Projects-specific brutal styles */
       body {
-        padding-top: 100px;
+        padding-top: 120px;
         background: #ffffff;
       }
 
@@ -28,11 +23,6 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 18px;
-      }
-
-      /* 为主内容增加左右padding，保持导航栏不变 */
-      main.main-container {
-        padding: 20px 60px; /* 上下20px，左右60px */
       }
 
       /* Navigation Layout - Right Align */
@@ -176,7 +166,7 @@
         font-size: 1.8rem;
         font-weight: 900;
         margin: 0 0 6px 0;
-        scroll-margin-top: 150px;
+        scroll-margin-top: 170px;
       }
 
       .project-subtitle {
@@ -251,18 +241,6 @@
 
       .project-card:nth-child(even) .stat-box:hover {
         color: #000000;
-      }
-
-      /* Hero Section Hover Effects */
-      .brutalist-hero:hover {
-        transform: translate(-2px, -2px);
-        box-shadow: 8px 8px 0 #000000;
-        transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
-      }
-
-      .title-huge:hover {
-        transform: translate(-1px, -1px);
-        transition: transform 0.12s ease-out;
       }
 
       .stat-number {
@@ -380,10 +358,12 @@
       <div class="main-container">
         <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
         <div class="nav-links">
-          <a href="index.html" class="brutalist-nav-item">HOME</a>
-          <a href="projects.html" class="brutalist-nav-item active">PROJECTS</a>
-          <a href="work.html" class="brutalist-nav-item">WORK</a>
-          <a href="hireme.html" class="brutalist-nav-item">HIRE ME</a>
+          <a href="yiyang_home_v2.html" class="brutalist-nav-item">HOME</a>
+          <a href="yiyang_projects_v2.html" class="brutalist-nav-item active"
+            >PROJECTS</a
+          >
+          <a href="yiyang_work_v2.html" class="brutalist-nav-item">WORK</a>
+          <a href="yiyang_hireme_v2.html" class="brutalist-nav-item">HIRE ME</a>
         </div>
       </div>
     </nav>
@@ -393,25 +373,12 @@
       <!-- Page Header -->
       <section class="brutalist-hero">
         <div class="brutalist-text-center">
-          <h1
-            class="title-huge"
-            style="
-              margin-bottom: 15px;
-              background: #721121;
-              color: #ffffff;
-              border: 4px solid #000000;
-              padding: 16px 24px;
-              box-shadow: 6px 6px 0 #000000;
-              display: inline-block;
-            "
-          >
-            My Projects
-          </h1>
+          <h1 class="title-huge" style="margin-bottom: 16px">My Projects</h1>
           <p
             style="
               font-size: 1.2rem;
               font-weight: 700;
-              max-width: 750px;
+              max-width: 700px;
               margin: 0 auto;
             "
           >
@@ -432,7 +399,7 @@
           >
             <div class="nav-title">Dutch Salary Insights</div>
             <img
-              src="assets/images/projects/dutch-salary-preview.jpg"
+              src="../../assets/images/projects/dutch-salary-preview.jpg"
               alt="Dutch Salary Insights Preview"
             />
           </a>
@@ -444,7 +411,7 @@
             <div class="nav-title">ChatGPT History Batch Deleter</div>
 
             <img
-              src="assets/images/projects/chatgpt-deleter-preview.jpg"
+              src="../../assets/images/projects/chatgpt-deleter-preview.jpg"
               alt="ChatGPT Deleter Preview"
             />
           </a>
@@ -455,7 +422,7 @@
           >
             <div class="nav-title">JustRaw Camera</div>
             <img
-              src="assets/images/projects/justraw-camera-preview.jpg"
+              src="../../assets/images/projects/justraw-camera-preview.jpg"
               alt="JustRaw Camera Preview"
             />
           </a>
@@ -466,7 +433,7 @@
           >
             <div class="nav-title">AI Self-Media Community</div>
             <img
-              src="assets/images/projects/ai-community-preview.jpg"
+              src="../../assets/images/projects/ai-community-preview.jpg"
               alt="AI Community Preview"
             />
           </a>

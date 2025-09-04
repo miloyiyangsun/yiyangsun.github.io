@@ -13,14 +13,9 @@
     <link rel="stylesheet" href="brutalist_theme_v2.css" />
 
     <style>
-      /* 平滑滚动效果 */
-      html {
-        scroll-behavior: smooth;
-      }
-
       /* Work-specific brutal styles */
       body {
-        padding-top: 100px;
+        padding-top: 120px;
         background: #ffffff;
       }
 
@@ -77,7 +72,6 @@
       .timeline-item {
         margin: 48px 0;
         position: relative;
-        scroll-margin-top: 130px; /* 对冲顶部padding和导航栏高度 */
       }
 
       .timeline-item:nth-child(odd) .work-card {
@@ -381,9 +375,6 @@
         cursor: pointer;
         position: relative;
         overflow: hidden;
-        text-decoration: none;
-        color: inherit;
-        display: block;
       }
 
       .work-nav-card:hover {
@@ -527,7 +518,7 @@
           <h1
             class="title-huge"
             style="
-              margin-bottom: 15px;
+              margin-bottom: 30px;
               background: #721121;
               color: #ffffff;
               border: 4px solid #000000;
@@ -580,7 +571,7 @@
       <section class="work-nav-section">
         <div class="work-nav-title">Work Experience</div>
         <div class="work-nav-grid">
-          <a href="#netease-youdao" class="work-nav-card">
+          <div class="work-nav-card">
             <div class="work-nav-position">Facebook Ads Specialist</div>
             <div class="work-nav-company">
               NetEase Youdao Information Technology
@@ -591,9 +582,9 @@
               <div class="work-nav-highlight">50% CPI Reduction</div>
               <div class="work-nav-highlight">4-Person Team Management</div>
             </div>
-          </a>
+          </div>
 
-          <a href="#youmi-technology" class="work-nav-card">
+          <div class="work-nav-card">
             <div class="work-nav-position">Overseas Ads Team Leader</div>
             <div class="work-nav-company">Youmi Technology</div>
             <div class="work-nav-period">July 2018 - April 2019</div>
@@ -602,9 +593,9 @@
               <div class="work-nav-highlight">6-Person Team Management</div>
               <div class="work-nav-highlight">2 New Hires</div>
             </div>
-          </a>
+          </div>
 
-          <a href="#yedao-technology" class="work-nav-card">
+          <div class="work-nav-card">
             <div class="work-nav-position">Facebook Ads Specialist</div>
             <div class="work-nav-company">Shanghai Yedao Technology</div>
             <div class="work-nav-period">January 2018 - July 2018</div>
@@ -613,9 +604,9 @@
               <div class="work-nav-highlight">2.4 ROI</div>
               <div class="work-nav-highlight">3 Months to Top</div>
             </div>
-          </a>
+          </div>
 
-          <a href="#tplink-singapore" class="work-nav-card">
+          <div class="work-nav-card">
             <div class="work-nav-position">Overseas Business Specialist</div>
             <div class="work-nav-company">TP-LINK Singapore</div>
             <div class="work-nav-period">July 2016 - July 2017</div>
@@ -624,14 +615,14 @@
               <div class="work-nav-highlight">2 Countries</div>
               <div class="work-nav-highlight">1 Year Overseas</div>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
       <!-- Timeline -->
       <section class="timeline">
         <!-- Work Experience 1 -->
-        <div class="timeline-item" id="netease-youdao">
+        <div class="timeline-item">
           <div class="timeline-node" data-year="2021"></div>
           <div class="work-card">
             <div class="work-header">
@@ -692,7 +683,7 @@
         </div>
 
         <!-- Work Experience 2 -->
-        <div class="timeline-item" id="youmi-technology">
+        <div class="timeline-item">
           <div class="timeline-node" data-year="2019"></div>
           <div class="work-card">
             <div class="work-header">
@@ -749,7 +740,7 @@
         </div>
 
         <!-- Work Experience 3 -->
-        <div class="timeline-item" id="yedao-technology">
+        <div class="timeline-item">
           <div class="timeline-node" data-year="2018"></div>
           <div class="work-card">
             <div class="work-header">
@@ -805,7 +796,7 @@
         </div>
 
         <!-- Work Experience 4 -->
-        <div class="timeline-item" id="tplink-singapore">
+        <div class="timeline-item">
           <div class="timeline-node" data-year="2017"></div>
           <div class="work-card">
             <div class="work-header">

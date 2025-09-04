@@ -162,7 +162,7 @@ h3,
 .brutalist-hero {
   background: var(--sunset);
   border: var(--border-thick) solid var(--text-primary);
-  padding: 16px 20px;
+  padding: 32px 20px;
   margin: 16px 0;
   text-align: center;
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);

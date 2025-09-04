@@ -123,7 +123,7 @@ h3,
 .brutalist-nav {
   background: var(--bg-primary);
   border-bottom: var(--border-thick) solid var(--text-primary);
-  padding: 0px 0;
+  padding: -10px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -162,7 +162,7 @@ h3,
 .brutalist-hero {
   background: var(--sunset);
   border: var(--border-thick) solid var(--text-primary);
-  padding: 16px 20px;
+  padding: 32px 20px;
   margin: 16px 0;
   text-align: center;
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
