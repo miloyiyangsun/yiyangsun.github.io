@@ -9,6 +9,12 @@
       content="Technical projects by Yiyang Sun including full-stack applications, mobile apps, and browser extensions. Neo-brutalist design showcase."
     />
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <!-- Neo-Brutalist Theme -->
     <link rel="stylesheet" href="brutalist_theme_v2.css?v=1.0" />
 
@@ -338,11 +344,185 @@
         margin-right: 12px;
       }
 
-      /* Mobile responsive */
-      @media (max-width: 768px) {
+      /* Enhanced Project Cards & Navigation Responsive System */
+
+      /* Extra Small Devices (小手机) - 紧凑项目卡片布局 */
+      @media (max-width: 479px) {
         .project-nav {
           grid-template-columns: 1fr;
-          gap: 18px;
+          gap: 12px;
+        }
+
+        .project-nav-item .nav-title {
+          font-size: 0.8rem;
+          padding: 8px 6px;
+          min-height: 44px; /* 触摸友好 */
+        }
+
+        .project-card {
+          margin: 16px 0;
+          padding: 0;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .project-header {
+          padding: 12px 16px;
+        }
+
+        .project-title {
+          font-size: 1.2rem;
+          line-height: 1.3;
+        }
+
+        .project-subtitle {
+          font-size: 0.85rem;
+          margin-top: 4px;
+        }
+
+        .project-content {
+          padding: 16px;
+        }
+
+        .project-description {
+          font-size: 0.9rem;
+          line-height: 1.5;
+          margin-bottom: 14px;
+        }
+
+        /* 项目统计网格 - 单列显示 */
+        .project-stats {
+          grid-template-columns: 1fr;
+          gap: 8px;
+          margin: 12px 0;
+        }
+
+        .stat-box {
+          padding: 10px 12px;
+          min-height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .stat-number {
+          font-size: 1.1rem;
+        }
+
+        .stat-label {
+          font-size: 0.75rem;
+          margin-top: 2px;
+        }
+
+        /* 技术标签优化 */
+        .tech-tags {
+          gap: 6px;
+          margin: 12px 0;
+        }
+
+        .tech-tag {
+          padding: 4px 8px;
+          font-size: 0.7rem;
+          margin: 2px;
+        }
+
+        /* 项目链接按钮 */
+        .project-links {
+          gap: 8px;
+          margin-top: 14px;
+        }
+
+        .project-link {
+          padding: 8px 12px;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* Small Devices (大手机) - 优化项目卡片布局 */
+      @media (min-width: 480px) and (max-width: 767px) {
+        .project-nav {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .project-nav-item .nav-title {
+          font-size: 0.82rem;
+          padding: 9px 6px;
+          min-height: 44px;
+        }
+
+        .project-card {
+          margin: 18px 0;
+          padding: 0;
+        }
+
+        .project-header {
+          padding: 14px 18px;
+        }
+
+        .project-title {
+          font-size: 1.3rem;
+          line-height: 1.3;
+        }
+
+        .project-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .project-content {
+          padding: 18px;
+        }
+
+        .project-description {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        /* 项目统计网格 - 双列显示 */
+        .project-stats {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+          margin: 14px 0;
+        }
+
+        .stat-box {
+          padding: 12px;
+          min-height: 70px;
+        }
+
+        .stat-number {
+          font-size: 1.2rem;
+        }
+
+        .stat-label {
+          font-size: 0.8rem;
+        }
+
+        .tech-tags {
+          gap: 8px;
+        }
+
+        .tech-tag {
+          padding: 5px 10px;
+          font-size: 0.75rem;
+        }
+
+        .project-links {
+          gap: 10px;
+          margin-top: 16px;
+        }
+
+        .project-link {
+          padding: 9px 14px;
+          font-size: 0.85rem;
+        }
+      }
+
+      /* Medium Devices (平板) - 保持原有布局优化 */
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .project-nav {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
         }
 
         .project-nav-item .nav-title {
@@ -352,25 +532,105 @@
         }
 
         .project-card {
-          margin: 24px 0;
+          margin: 20px 0;
         }
 
         .project-header {
-          padding: 14px 18px;
+          padding: 16px 20px;
         }
 
         .project-title {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
         }
 
         .project-content {
-          padding: 18px;
+          padding: 20px;
         }
 
         .project-stats {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+        }
+
+        .stat-box {
+          min-height: 80px;
+          padding: 14px;
         }
       }
+
+      /* Large Devices (桌面) - 最佳显示效果 */
+      @media (min-width: 1024px) {
+        .project-nav {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 18px;
+        }
+
+        .project-stats {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 14px;
+        }
+
+        .stat-box {
+          min-height: 85px;
+          padding: 16px;
+        }
+      }
+
+      /* 通用防重叠和内容保护规则 */
+      @media (max-width: 767px) {
+        /* 确保项目卡片内容不被截断 */
+        .project-card {
+          box-sizing: border-box;
+          min-width: 0;
+        }
+
+        .project-description,
+        .project-content p,
+        .project-content ul li {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        /* 技术标签自适应换行 */
+        .tech-tags {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: flex-start;
+        }
+
+        .tech-tag {
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+
+        /* 项目链接按钮自适应 */
+        .project-links {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: flex-start;
+        }
+
+        .project-link {
+          white-space: nowrap;
+          min-height: 44px; /* 触摸友好 */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* 统计数字防溢出 */
+        .stat-number {
+          word-break: break-all;
+          max-width: 100%;
+        }
+
+        .stat-label {
+          text-align: center;
+          hyphens: auto;
+        }
+      }
+
     </style>
   </head>
 
@@ -379,14 +639,47 @@
     <nav class="brutalist-nav">
       <div class="main-container">
         <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
+        
+        <!-- Desktop Navigation -->
         <div class="nav-links">
           <a href="index.html" class="brutalist-nav-item">HOME</a>
           <a href="projects.html" class="brutalist-nav-item active">PROJECTS</a>
           <a href="work.html" class="brutalist-nav-item">WORK</a>
           <a href="hireme.html" class="brutalist-nav-item">HIRE ME</a>
         </div>
+        
+        <!-- Mobile Hamburger Menu with CSS-only fallback -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" style="display: none;">
+        <label for="nav-toggle" class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </label>
       </div>
     </nav>
+
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+      <a href="index.html" class="nav-item">
+        <i data-lucide="home" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HOME
+      </a>
+      <a href="projects.html" class="nav-item active">
+        <i data-lucide="folder" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        PROJECTS
+      </a>
+      <a href="work.html" class="nav-item">
+        <i data-lucide="briefcase" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        WORK
+      </a>
+      <a href="hireme.html" class="nav-item">
+        <i data-lucide="mail" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HIRE ME
+      </a>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <!-- Main Content -->
     <main class="main-container">
@@ -799,7 +1092,130 @@
           });
         });
 
+      // Mobile Navigation Control (Enhanced with CSS-only fallback)
+      // Only initialize mobile navigation on mobile devices
+      if (window.innerWidth <= 767) {
+        console.log('🔧 PROJECTS.HTML - Initializing mobile navigation...');
+        
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const navToggle = document.getElementById('nav-toggle');
+        
+        // Debug: Check if elements exist
+        console.log('📱 Elements found:', {
+          hamburgerBtn: !!hamburgerBtn,
+          mobileSidebar: !!mobileSidebar, 
+          mobileOverlay: !!mobileOverlay,
+          navToggle: !!navToggle
+        });
+
+      function toggleMobileMenu() {
+        const isOpen = mobileSidebar.classList.contains('open') || (navToggle && navToggle.checked);
+        
+        if (isOpen) {
+          // Close menu
+          mobileSidebar.classList.remove('open');
+          mobileOverlay.classList.remove('open');
+          if (navToggle) navToggle.checked = false;
+          document.body.style.overflow = '';
+        } else {
+          // Open menu
+          mobileSidebar.classList.add('open');
+          mobileOverlay.classList.add('open');
+          if (navToggle) navToggle.checked = true;
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      // Hamburger menu click handler
+      if (hamburgerBtn) {
+        console.log('🍔 PROJECTS.HTML - Adding click listener to hamburger button');
+        hamburgerBtn.addEventListener('click', function(e) {
+          console.log('🖱️ PROJECTS.HTML - Hamburger button clicked!', e);
+          e.preventDefault(); // Prevent default label behavior
+          toggleMobileMenu();
+        });
+      } else {
+        console.error('❌ PROJECTS.HTML - Hamburger button not found!');
+      }
+
+      // Overlay click handler
+      if (mobileOverlay) {
+        console.log('🔲 PROJECTS.HTML - Adding overlay click listener');
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+      } else {
+        console.error('❌ PROJECTS.HTML - Mobile overlay not found!');
+      }
+
+      // Close menu when navigation link is clicked
+      document.querySelectorAll('.mobile-sidebar .nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(toggleMobileMenu, 100); // Small delay for better UX
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileSidebar.classList.contains('open')) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Handle touch gestures for swipe-to-close (简化版)
+      let startX = 0;
+      mobileSidebar.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+      });
+
+      mobileSidebar.addEventListener('touchmove', function(e) {
+        const currentX = e.touches[0].clientX;
+        const diffX = startX - currentX;
+        
+        // If swiping left significantly, close menu
+        if (diffX > 50) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Handle CSS-only fallback (checkbox state change)
+      if (navToggle) {
+        navToggle.addEventListener('change', function() {
+          if (this.checked && !mobileSidebar.classList.contains('open')) {
+            mobileSidebar.classList.add('open');
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          } else if (!this.checked && mobileSidebar.classList.contains('open')) {
+            mobileSidebar.classList.remove('open');
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+        console.log("🚀 PROJECTS PAGE - MOBILE NAVIGATION INITIALIZED");
+      } else {
+        console.log('💻 PROJECTS.HTML - Desktop mode, mobile navigation disabled');
+        // Ensure mobile elements are hidden on desktop
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        if (mobileSidebar) {
+          mobileSidebar.classList.remove('open');
+          mobileSidebar.style.display = 'none';
+        }
+        if (mobileOverlay) {
+          mobileOverlay.classList.remove('open');
+          mobileOverlay.style.display = 'none';
+        }
+      }
+
       console.log("🚀 PROJECTS PAGE - NEO-BRUTALIST DESIGN LOADED");
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
     </script>
     <!-- GoatCounter Analytics -->
     <script data-goatcounter="https://yiyang.goatcounter.com/count"

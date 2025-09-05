@@ -322,25 +322,515 @@ select:focus {
   font-family: var(--font-mono);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Enhanced Multi-Tier Responsive System */
+
+/* Extra Small Devices (小手机) - 320px to 479px */
+@media (max-width: 479px) {
   :root {
-    --font-size-huge: 1.8rem;
-    --font-size-large: 1.4rem;
-    --shadow-offset: 4px;
+    --font-size-huge: 1.5rem;
+    --font-size-large: 1.2rem;
+    --font-size-medium: 1rem;
+    --font-size-normal: 0.9rem;
+    --shadow-offset: 3px;
+    --shadow-offset-sm: 2px;
+    --border-thick: 3px;
+    --border-medium: 2px;
   }
 
-  .brutalist-nav-item {
-    display: block;
-    margin: 4px 0;
+  body {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* Typography响应式优化 */
+  h1, .title-huge {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  h2, .title-large {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+
+  h3, .title-medium {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .brutalist-stat-number {
+    font-size: 1.4rem;
+  }
+
+  .brutalist-stat-label {
+    font-size: 0.8rem;
+  }
+
+  .brutalist-card {
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  .brutalist-button {
+    padding: 8px 14px;
+    font-size: 0.85rem;
   }
 
   .brutalist-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .brutalist-skills {
     grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .brutalist-skill {
+    padding: 8px;
+  }
+
+  .brutalist-contact {
+    padding: 12px;
+  }
+
+  .brutalist-hero {
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+
+  /* 卡片系统完整性保证 */
+  .preview-card,
+  .project-card,
+  .work-card {
+    padding: 14px;
+    margin: 12px 0;
+    min-height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 确保按钮和链接不会被截断 */
+  .brutalist-button,
+  .nav-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-height: 44px; /* 触摸友好 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 图片和头像响应式 */
+  .brutalist-avatar {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  /* 技能卡片优化 */
+  .skill-item {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+    min-height: 32px;
+  }
+
+  /* 统计卡片优化 */
+  .stat-box {
+    padding: 10px;
+    min-height: 80px;
+  }
+}
+
+/* Small Devices (大手机) - 480px to 767px */
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --font-size-huge: 1.7rem;
+    --font-size-large: 1.3rem;
+    --font-size-medium: 1.05rem;
+    --font-size-normal: 0.92rem;
+    --shadow-offset: 4px;
+    --shadow-offset-sm: 3px;
+  }
+
+  /* Typography响应式优化 */
+  h1, .title-huge {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  h2, .title-large {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  h3, .title-medium {
+    font-size: 1.02rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .brutalist-stat-number {
+    font-size: 1.6rem;
+  }
+
+  .brutalist-stat-label {
+    font-size: 0.85rem;
+  }
+
+  .brutalist-card {
+    padding: 14px;
+    margin: 10px 0;
+  }
+
+  .brutalist-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .brutalist-skills {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .brutalist-contact {
+    padding: 14px;
+  }
+
+  .brutalist-hero {
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+
+  /* 卡片系统完整性保证 */
+  .preview-card,
+  .project-card,
+  .work-card {
+    padding: 16px;
+    margin: 14px 0;
+    min-height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 图片和头像响应式 */
+  .brutalist-avatar {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  /* 技能卡片优化 */
+  .skill-item {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    min-height: 36px;
+  }
+
+  /* 统计卡片优化 */
+  .stat-box {
+    padding: 12px;
+    min-height: 90px;
+  }
+}
+
+/* Medium Devices (平板) - 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --font-size-huge: 2rem;
+    --font-size-large: 1.5rem;
+    --font-size-medium: 1.08rem;
+    --font-size-normal: 0.94rem;
+    --shadow-offset: 5px;
+    --shadow-offset-sm: 4px;
+  }
+
+  /* Typography响应式优化 */
+  h1, .title-huge {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  h2, .title-large {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  h3, .title-medium {
+    font-size: 1.06rem;
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 0.94rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .brutalist-stat-number {
+    font-size: 1.8rem;
+  }
+
+  .brutalist-stat-label {
+    font-size: 0.88rem;
+  }
+
+  .brutalist-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .brutalist-skills {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .brutalist-card {
+    padding: 16px;
+  }
+
+  /* 卡片系统完整性保证 */
+  .preview-card,
+  .project-card,
+  .work-card {
+    padding: 18px;
+    margin: 16px 0;
+    min-height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* 图片和头像响应式 */
+  .brutalist-avatar {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto;
+  }
+
+  /* 技能卡片优化 */
+  .skill-item {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
+
+  /* 统计卡片优化 */
+  .stat-box {
+    padding: 14px;
+    min-height: 100px;
+  }
+}
+
+/* Large Devices (桌面) - 1024px to 1199px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  :root {
+    --font-size-huge: 2.1rem;
+    --font-size-large: 1.6rem;
+    --font-size-medium: 1.1rem;
+    --font-size-normal: 0.95rem;
+    --shadow-offset: 6px;
+    --shadow-offset-sm: 4px;
+  }
+
+  .brutalist-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .brutalist-skills {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Extra Large Devices (大屏) - 1200px+ */
+@media (min-width: 1200px) {
+  .brutalist-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .brutalist-skills {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+  }
+
+  .brutalist-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 767px) {
+  .brutalist-nav {
+    padding: 8px 0;
+  }
+
+  .brutalist-nav .main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .nav-links {
+    display: none; /* Will be replaced with hamburger menu */
+  }
+
+  /* Hamburger Menu Button */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 4px;
+    background: var(--text-primary);
+    border: none;
+    transition: none;
+  }
+
+  /* Sidebar Navigation */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-primary);
+    border-right: var(--border-thick) solid var(--text-primary);
+    box-shadow: var(--shadow-offset) 0 0 var(--shadow-color);
+    transition: left 0.3s ease-out;
+    z-index: 2000;
+    padding-top: 80px;
+  }
+
+  .mobile-sidebar.open {
+    left: 0;
+  }
+
+  .mobile-sidebar .nav-item {
+    display: block;
+    padding: 16px 24px;
+    background: var(--bg-primary);
+    border-bottom: var(--border-medium) solid var(--text-primary);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: none;
+    margin: 0;
+    min-height: 44px; /* Touch target size */
+  }
+
+  .mobile-sidebar .nav-item:hover {
+    background: var(--fawn);
+  }
+
+  .mobile-sidebar .nav-item.active {
+    background: var(--indian-red);
+    color: var(--text-inverse);
+  }
+
+  /* Overlay for sidebar */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+  }
+
+  .mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+  .hamburger-menu,
+  .mobile-sidebar,
+  .mobile-overlay {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    left: -100% !important;
+    position: absolute !important;
+    pointer-events: none !important;
+    z-index: -999 !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .brutalist-nav-item {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 10px 16px;
+    background: var(--fawn);
+    border: var(--border-thick) solid var(--text-primary);
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 700;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow-color);
+    transition: none;
+    cursor: pointer;
+    min-height: auto;
+  }
+  
+  .brutalist-nav-item:hover {
+    background: var(--indian-red);
+    color: var(--text-inverse);
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px) 0
+      var(--shadow-color);
+  }
+  
+  .brutalist-nav-item.active {
+    background: var(--indian-red);
+    color: var(--text-inverse);
+  }
+}
+
+/* Ensure hamburger menu is visible on mobile and tablet */
+@media (max-width: 767px) {
+  .hamburger-menu {
+    display: flex !important;
+  }
+  
+  .nav-links {
+    display: none !important;
+  }
+  
+  /* CSS-only hamburger menu fallback - DISABLED */
+  /* Note: CSS-only fallback cannot work with current HTML structure */
+  /* because checkbox and sidebar are not sibling elements */
+  .nav-toggle-checkbox {
+    display: none !important;
   }
 }
 

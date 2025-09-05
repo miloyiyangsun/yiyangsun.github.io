@@ -9,6 +9,12 @@
       content="Yiyang Sun - Software Engineer with 5+ years business experience and technical expertise. Neo-brutalist portfolio design."
     />
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <!-- Neo-Brutalist Theme -->
     <link rel="stylesheet" href="brutalist_theme_v2.css?v=1.0" />
 
@@ -36,7 +42,34 @@
 
       /* 为主内容增加左右padding，保持导航栏不变 */
       main.main-container {
-        padding: 20px 60px; /* 上下18px，左右60px */
+        padding: 20px 60px; /* 桌面版：上下20px，左右60px */
+      }
+
+      /* 移动端主容器响应式padding */
+      @media (max-width: 479px) {
+        .main-container {
+          padding: 16px 20px; /* 小手机：上下16px，左右20px */
+        }
+        
+        main.main-container {
+          padding: 16px 20px; /* 小手机主内容：减少padding */
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 767px) {
+        .main-container {
+          padding: 18px 24px; /* 大手机：上下18px，左右24px */
+        }
+        
+        main.main-container {
+          padding: 18px 24px; /* 大手机主内容 */
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        main.main-container {
+          padding: 20px 40px; /* 平板：上下20px，左右40px */
+        }
       }
 
       /* Navigation Layout - Right Align */
@@ -74,6 +107,33 @@
         text-align: left;
       }
 
+      /* 移动端Hero Layout响应式 */
+      @media (max-width: 767px) {
+        .hero-layout {
+          grid-template-columns: 1fr; /* 单列布局 */
+          gap: 32px;
+          text-align: center; /* 移动端居中 */
+          max-width: 100%;
+        }
+        
+        .hero-content {
+          text-align: center; /* 移动端文字居中 */
+          order: 2; /* 头像在上，内容在下 */
+        }
+        
+        .hero-avatar {
+          order: 1; /* 头像在上 */
+          justify-content: center; /* 头像居中 */
+        }
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .hero-layout {
+          grid-template-columns: 1fr 280px; /* 平板：减少头像区域宽度 */
+          gap: 36px;
+        }
+      }
+
       .hero-avatar {
         display: flex;
         justify-content: center;
@@ -101,13 +161,7 @@
         margin: 32px 0;
       }
 
-      /* Skills brutal grid */
-      .skills-brutal-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px;
-        margin: 24px 0;
-      }
+      /* Skills grid now uses global .brutalist-skills class for responsive handling */
 
       .skill-category {
         background: #ffffff;
@@ -212,20 +266,53 @@
         background: #ffffff;
         border: 4px solid #000000;
         padding: 24px;
-        margin: 24px 0;
+        margin: 24px 12px 24px 0; /* Add right margin for decorative element safety */
         box-shadow: 6px 6px 0 #000000;
         position: relative;
+        overflow: visible; /* Ensure decorative elements are visible */
       }
 
       .preview-card::before {
         content: "";
         position: absolute;
-        top: -8px;
-        right: -8px;
-        width: 40px;
-        height: 40px;
+        top: -6px;
+        right: -6px;
+        width: 30px;
+        height: 30px;
         background: #f15156;
         border: 3px solid #000000;
+        z-index: 1;
+      }
+
+      /* Responsive decorative elements */
+      @media (max-width: 479px) {
+        .preview-card {
+          margin: 16px 8px 16px 0; /* Reduced margins for mobile */
+          padding: 16px;
+        }
+        
+        .preview-card::before {
+          width: 20px;
+          height: 20px;
+          top: -4px;
+          right: -4px;
+          border: 2px solid #000000;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 767px) {
+        .preview-card {
+          margin: 18px 10px 18px 0; /* Adjusted margins for larger mobile */
+          padding: 18px;
+        }
+        
+        .preview-card::before {
+          width: 25px;
+          height: 25px;
+          top: -5px;
+          right: -5px;
+          border: 2px solid #000000;
+        }
       }
 
       .preview-card:nth-child(even) {
@@ -358,9 +445,18 @@
           grid-template-columns: 1fr;
         }
 
-        .skills-brutal-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 12px;
+        /* .skills-brutal-grid responsive rules removed - handled by global CSS now */
+        
+        /* Skills Section 移动端优化 */
+        .brutalist-skills {
+          justify-items: center; /* 网格项居中 */
+          margin: 0 auto;
+        }
+        
+        .skill-category {
+          width: 100%;
+          max-width: 280px; /* 限制最大宽度保持美观 */
+          margin: 0 auto;
         }
 
         .preview-card {
@@ -567,14 +663,47 @@
     <nav class="brutalist-nav">
       <div class="main-container">
         <strong class="nav-brand" style="font-size: 1.3rem">YIYANG SUN</strong>
+        
+        <!-- Desktop Navigation -->
         <div class="nav-links">
           <a href="index.html" class="brutalist-nav-item active">HOME</a>
           <a href="projects.html" class="brutalist-nav-item">PROJECTS</a>
           <a href="work.html" class="brutalist-nav-item">WORK</a>
           <a href="hireme.html" class="brutalist-nav-item">HIRE ME</a>
         </div>
+        
+        <!-- Mobile Hamburger Menu with CSS-only fallback -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" style="display: none;">
+        <label for="nav-toggle" class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </label>
       </div>
     </nav>
+
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+      <a href="index.html" class="nav-item active">
+        <i data-lucide="home" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HOME
+      </a>
+      <a href="projects.html" class="nav-item">
+        <i data-lucide="folder" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        PROJECTS
+      </a>
+      <a href="work.html" class="nav-item">
+        <i data-lucide="briefcase" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        WORK
+      </a>
+      <a href="hireme.html" class="nav-item">
+        <i data-lucide="mail" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HIRE ME
+      </a>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <!-- Main Content -->
     <main class="main-container">
@@ -709,7 +838,7 @@
           </h2>
         </div>
 
-        <div class="skills-brutal-grid">
+        <div class="brutalist-skills">
           <div class="skill-category">
             <h3>Frontend</h3>
             <div class="skill-item"><i data-lucide="zap"></i> JavaScript</div>
@@ -1031,6 +1160,93 @@
             this.style.boxShadow = "";
           });
         });
+
+      // Mobile Navigation Control (Enhanced with CSS-only fallback)
+      // Only initialize mobile navigation on mobile devices
+      if (window.innerWidth <= 767) {
+        console.log('🔧 INDEX.HTML - Initializing mobile navigation...');
+        
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const navToggle = document.getElementById('nav-toggle');
+
+      function toggleMobileMenu() {
+        const isOpen = mobileSidebar.classList.contains('open') || (navToggle && navToggle.checked);
+        
+        if (isOpen) {
+          // Close menu
+          mobileSidebar.classList.remove('open');
+          mobileOverlay.classList.remove('open');
+          if (navToggle) navToggle.checked = false;
+          document.body.style.overflow = '';
+        } else {
+          // Open menu
+          mobileSidebar.classList.add('open');
+          mobileOverlay.classList.add('open');
+          if (navToggle) navToggle.checked = true;
+          document.body.style.overflow = 'hidden'; // Prevent background scroll
+        }
+      }
+
+      // Hamburger button click (works with both button and label)
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent default label behavior
+          toggleMobileMenu();
+        });
+      }
+
+      // Overlay click to close
+      if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+      }
+
+      // Close menu when navigation link is clicked
+      document.querySelectorAll('.mobile-sidebar .nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(toggleMobileMenu, 100); // Small delay for better UX
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileSidebar.classList.contains('open')) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Handle touch gestures for swipe-to-close (简化版)
+      let startX = 0;
+      mobileSidebar.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+      });
+
+      mobileSidebar.addEventListener('touchmove', function(e) {
+        const currentX = e.touches[0].clientX;
+        const diffX = startX - currentX;
+        
+        // If swiping left significantly, close menu
+        if (diffX > 50) {
+          toggleMobileMenu();
+        }
+      });
+
+      console.log("🚀 INDEX PAGE - MOBILE NAVIGATION INITIALIZED");
+    } else {
+      console.log('💻 INDEX.HTML - Desktop mode, mobile navigation disabled');
+      // Ensure mobile elements are hidden on desktop
+      const mobileSidebar = document.getElementById('mobile-sidebar');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      if (mobileSidebar) {
+        mobileSidebar.classList.remove('open');
+        mobileSidebar.style.display = 'none';
+      }
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('open');
+        mobileOverlay.style.display = 'none';
+      }
+    }
     </script>
     <!-- GoatCounter Analytics -->
     <script

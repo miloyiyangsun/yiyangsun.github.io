@@ -9,6 +9,12 @@
       content="Hire Yiyang Sun - Software Engineer with 5+ years business experience seeking Full-Stack, Frontend, or Backend opportunities in Amsterdam. Neo-brutalist design."
     />
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
     <!-- Neo-Brutalist Theme -->
     <link rel="stylesheet" href="brutalist_theme_v2.css?v=1.0" />
 
@@ -434,6 +440,7 @@
           font-size: 2rem;
         }
       }
+
     </style>
   </head>
 
@@ -452,8 +459,37 @@
             >HIRE ME</a
           >
         </div>
+        
+        <!-- Mobile Hamburger Menu with CSS-only fallback -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" style="display: none;">
+        <label for="nav-toggle" class="hamburger-menu" id="hamburger-btn" aria-label="Toggle navigation menu">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </label>
       </div>
     </nav>
+    <!-- Mobile Sidebar Navigation -->
+    <div class="mobile-sidebar" id="mobile-sidebar">
+      <a href="index.html" class="nav-item">
+        <i data-lucide="home" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HOME
+      </a>
+      <a href="projects.html" class="nav-item">
+        <i data-lucide="folder" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        PROJECTS
+      </a>
+      <a href="work.html" class="nav-item">
+        <i data-lucide="briefcase" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        WORK
+      </a>
+      <a href="hireme.html" class="nav-item active">
+        <i data-lucide="user-plus" style="width: 16px; height: 16px; margin-right: 8px;"></i>
+        HIRE ME
+      </a>
+    </div>
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
 
     <!-- Main Content -->
     <main class="main-container">
@@ -692,7 +728,7 @@ Email Me Today
                 text-align: left;
               "
             >
-              <div>✓ <strong>Availability:</strong> July 2025</div>
+              <div>✓ <strong>Availability:</strong> Immediate</div>
               <div>✓ <strong>Location:</strong> Amsterdam</div>
               <div>✓ <strong>Visa Status:</strong> EU Authorized</div>
               <div>✓ <strong>Experience:</strong> 5+ Years Business</div>
@@ -762,6 +798,107 @@ Email Me Today
           console.log("📧 EMAIL CLICK - POTENTIAL HIRE INTEREST!");
         });
       });
+
+      // Mobile Navigation Control (Enhanced with CSS-only fallback)
+      // Only initialize mobile navigation on mobile devices
+      if (window.innerWidth <= 767) {
+        console.log('🔧 HIREME.HTML - Initializing mobile navigation...');
+        
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const navToggle = document.getElementById('nav-toggle');
+        
+        // Debug: Check if elements exist
+        console.log('📱 Elements found:', {
+          hamburgerBtn: !!hamburgerBtn,
+          mobileSidebar: !!mobileSidebar, 
+          mobileOverlay: !!mobileOverlay,
+          navToggle: !!navToggle
+        });
+
+      function toggleMobileMenu() {
+        const isOpen = mobileSidebar.classList.contains('open') || (navToggle && navToggle.checked);
+        
+        if (isOpen) {
+          // Close menu
+          mobileSidebar.classList.remove('open');
+          mobileOverlay.classList.remove('open');
+          if (navToggle) navToggle.checked = false;
+          document.body.style.overflow = '';
+        } else {
+          // Open menu
+          mobileSidebar.classList.add('open');
+          mobileOverlay.classList.add('open');
+          if (navToggle) navToggle.checked = true;
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      // Hamburger menu click handler
+      if (hamburgerBtn) {
+        console.log('🍔 HIREME.HTML - Adding click listener to hamburger button');
+        hamburgerBtn.addEventListener('click', function(e) {
+          console.log('🖱️ HIREME.HTML - Hamburger button clicked!', e);
+          e.preventDefault(); // Prevent default label behavior
+          toggleMobileMenu();
+        });
+      } else {
+        console.error('❌ HIREME.HTML - Hamburger button not found!');
+      }
+
+      // Overlay click handler
+      if (mobileOverlay) {
+        console.log('🔲 HIREME.HTML - Adding overlay click listener');
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
+      } else {
+        console.error('❌ HIREME.HTML - Mobile overlay not found!');
+      }
+
+      // Close menu when navigation link is clicked
+      document.querySelectorAll('.mobile-sidebar .nav-item').forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(toggleMobileMenu, 100); // Small delay for better UX
+        });
+      });
+
+      // Close menu on escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileSidebar.classList.contains('open')) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Handle CSS-only fallback (checkbox state change)
+      if (navToggle) {
+        navToggle.addEventListener('change', function() {
+          if (this.checked && !mobileSidebar.classList.contains('open')) {
+            mobileSidebar.classList.add('open');
+            mobileOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+          } else if (!this.checked && mobileSidebar.classList.contains('open')) {
+            mobileSidebar.classList.remove('open');
+            mobileOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      console.log("🚀 HIREME PAGE - MOBILE NAVIGATION INITIALIZED");
+    } else {
+      console.log('💻 HIREME.HTML - Desktop mode, mobile navigation disabled');
+      // Ensure mobile elements are hidden on desktop
+      const mobileSidebar = document.getElementById('mobile-sidebar');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      if (mobileSidebar) {
+        mobileSidebar.classList.remove('open');
+        mobileSidebar.style.display = 'none';
+      }
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('open');
+        mobileOverlay.style.display = 'none';
+      }
+    }
     </script>
     <!-- GoatCounter Analytics -->
     <script data-goatcounter="https://yiyang.goatcounter.com/count"
