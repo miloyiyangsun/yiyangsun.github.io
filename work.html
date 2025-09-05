@@ -462,46 +462,46 @@
       /* Extra Small Devices (小手机) - Timeline单列紧凑布局 */
       @media (max-width: 479px) {
         .timeline {
-          margin: 20px 0;
-          padding: 0 12px;
+          margin: 20px 0; /* 时间轴上下外边距 */
+          padding: 0 8px; /* 时间轴左右内边距 */
         }
 
         .timeline::before {
-          left: 16px;
-          width: 4px;
+          left: 0px; /* 时间线贴左边界 */
+          width: 3px; /* 时间线粗细 */
         }
 
         .timeline-item {
-          margin: 32px 0;
+          margin: 32px 0; /* 每个工作项目上下间距 */
         }
 
         .timeline-item:nth-child(odd) .work-card,
         .timeline-item:nth-child(even) .work-card {
-          margin: 0 0 0 48px;
+          margin: 0 6px 0 20px; /* 工作卡片边距：上 右6px 下 左20px */
         }
 
         .timeline-node {
-          left: 16px;
-          width: 32px;
-          height: 32px;
-          top: 18px;
+          left: -10px; /* 年份节点负定位，部分超出左边界 */
+          width: 26px; /* 年份节点宽度 */
+          height: 26px; /* 年份节点高度 */
+          top: 18px; /* 年份节点距离顶部位置 */
         }
 
         .timeline-node::before {
-          left: 0px;
-          transform: none;
-          font-size: 0.75rem;
-          padding: 4px 6px;
-          top: 32px;
-          max-width: 80px;
-          text-align: center;
-          word-wrap: break-word;
-          z-index: 25;
+          left: 0px; /* 年份文字贴左边 */
+          transform: none; /* 不使用transform居中 */
+          font-size: 0.75rem; /* 年份文字大小 */
+          padding: 4px 6px; /* 年份文字内边距 */
+          top: 32px; /* 年份文字距顶部距离 */
+          max-width: 80px; /* 年份文字最大宽度 */
+          text-align: center; /* 年份文字居中 */
+          word-wrap: break-word; /* 年份文字换行 */
+          z-index: 25; /* 年份文字层级，确保在最上层 */
         }
 
         .work-card {
-          padding: 14px;
-          margin-bottom: 16px;
+          padding: 14px; /* 工作卡片内边距 */
+          margin-bottom: 16px; /* 工作卡片下边距 */
         }
 
         .work-header {
@@ -509,12 +509,23 @@
         }
 
         .work-title {
-          font-size: 1.2rem;
-          line-height: 1.3;
+          font-size: 1rem;
+          line-height: 1.2;
         }
 
         .work-subtitle {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+        }
+
+        .work-company,
+        .work-period,
+        .work-location {
+          font-size: 0.75rem;
+        }
+
+        .work-description {
+          font-size: 0.8rem;
+          line-height: 1.4;
         }
 
         .work-content {
@@ -554,7 +565,28 @@
         }
 
         .work-card {
-          margin-left: 42px;
+          margin: 0 4px 16px 16px; /* 超小屏工作卡片边距：上 右4px 下16px 左16px */
+          overflow: hidden; /* 隐藏超出内容 */
+          word-wrap: break-word; /* 长单词自动换行 */
+          box-sizing: border-box; /* 包含内边距的盒子模型 */
+        }
+
+        .work-title {
+          font-size: 0.9rem; /* 职位标题字体大小 */
+          line-height: 1.1; /* 职位标题行高 */
+        }
+
+        .work-company,
+        .work-period,
+        .work-location {
+          font-size: 0.7rem; /* 公司、时间、地点字体大小 */
+          margin: 2px 0; /* 公司等信息上下间距 */
+        }
+
+        .work-description {
+          font-size: 0.75rem; /* 工作描述字体大小 */
+          line-height: 1.3; /* 工作描述行高 */
+          margin-top: 8px; /* 工作描述上边距 */
         }
       }
 
@@ -562,12 +594,12 @@
       @media (min-width: 480px) and (max-width: 767px) {
         .timeline {
           margin: 24px 0;
-          padding: 0 16px;
+          padding: 0 10px;
         }
 
         .timeline::before {
-          left: 20px;
-          width: 5px;
+          left: 0px;
+          width: 3px;
         }
 
         .timeline-item {
@@ -576,13 +608,13 @@
 
         .timeline-item:nth-child(odd) .work-card,
         .timeline-item:nth-child(even) .work-card {
-          margin: 0 0 0 56px;
+          margin: 0 8px 0 22px;
         }
 
         .timeline-node {
-          left: 20px;
-          width: 36px;
-          height: 36px;
+          left: -12px;
+          width: 28px;
+          height: 28px;
           top: 20px;
         }
 
@@ -608,7 +640,19 @@
         }
 
         .work-title {
-          font-size: 1.3rem;
+          font-size: 1.1rem;
+          line-height: 1.2;
+        }
+
+        .work-company,
+        .work-period,
+        .work-location {
+          font-size: 0.8rem;
+        }
+
+        .work-description {
+          font-size: 0.85rem;
+          line-height: 1.4;
         }
 
         .work-content {
