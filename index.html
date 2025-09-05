@@ -162,6 +162,60 @@
       }
 
       /* Skills grid now uses global .brutalist-skills class for responsive handling */
+      
+      /* 桌面端Skills布局重写 - 确保4个类别合适显示 */
+      @media (min-width: 768px) {
+        .brutalist-skills {
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 18px !important;
+          max-width: 1200px;
+          margin: 24px auto;
+        }
+        
+        .skill-category {
+          min-height: auto;
+          display: flex;
+          flex-direction: column;
+          background: #ffffff;
+          border: 4px solid #000000;
+          padding: 16px;
+          box-shadow: 6px 6px 0 #000000;
+        }
+        
+        .skill-category h3 {
+          margin-bottom: 12px;
+          font-size: 1.1rem;
+          text-align: center;
+          color: #f15156;
+          font-weight: 700;
+        }
+        
+        .skill-item {
+          margin-bottom: 8px;
+          padding: 8px 12px;
+          font-size: 0.9rem;
+          background: #ffcf99;
+          border: 2px solid #000000;
+          font-weight: 700;
+        }
+      }
+      
+      /* 更大桌面屏幕优化 */
+      @media (min-width: 1024px) {
+        .brutalist-skills {
+          gap: 24px !important;
+          max-width: 1400px;
+        }
+        
+        .skill-category {
+          padding: 20px;
+        }
+        
+        .skill-item {
+          padding: 10px 14px;
+          font-size: 0.95rem;
+        }
+      }
 
       .skill-category {
         background: #ffffff;
